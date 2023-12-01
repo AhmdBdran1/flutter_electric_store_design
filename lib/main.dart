@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:store_app/constants.dart';
 import 'package:store_app/screens/home_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main(){
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,21 +17,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.almaraiTextTheme(Theme.of(context).textTheme),
         primaryColor: kPrimaryColor,
-        hintColor: kPrimaryColor,
-
       ),
       home: HomeScreen(),
 
-
-        builder: (context, child) { // set the all app to start from left to right ;
-          return Directionality(
-            textDirection: TextDirection.rtl,
-            child: child!,
-          );
-        },
+      builder: (context, child) { // set the all app to start from left to right ;
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: child!,
+        );
+      },
 
     );
-
-
   }
 }
