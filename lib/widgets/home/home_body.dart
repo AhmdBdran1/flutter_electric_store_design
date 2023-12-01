@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/constants.dart';
-import 'package:store_app/widgets/details/detals_screen.dart';
 import 'package:store_app/widgets/home/product_card.dart';
 import 'package:store_app/models/product.dart';
 
-import '../../models/product.dart';
 import '../../screens/details_screen.dart';
 
 class HomeBody extends StatelessWidget {
@@ -32,13 +30,14 @@ class HomeBody extends StatelessWidget {
                     margin: EdgeInsets.only(top: 70),
                   ),
 
+
                   ListView.builder(
                     itemCount:Product.products.length,
                       itemBuilder: (context,index)=>ProductCard(
                         itemIndex: index,
                         product: Product.products[index],
                         press: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(product: Product.products[index],)));
                           },
                       ),
                   ),
